@@ -1,0 +1,16 @@
+pair_id,context,option_a,option_b,category,framing
+1,"When making moral decisions, people should primarily consider","timeless religious principles and divine guidance","evidence-based reasoning and humanistic values",moral_foundation,decision_making
+2,"The meaning of life is best understood through","spiritual purpose and divine plan","personal fulfillment and human achievement",existential_meaning,life_purpose
+3,"Education should emphasize","moral character formation and religious heritage","critical thinking and scientific methodology",educational_priority,learning
+4,"Social problems are most effectively addressed by","faith-based communities and religious institutions","government programs and secular organizations",social_solutions,institutions
+5,"Human nature is fundamentally","fallen and in need of redemption","neutral and shaped by environment",anthropological_view,human_nature
+6,"Ethical standards should be grounded in","eternal moral truths revealed by God","evolving social consensus and rational discourse",ethical_foundation,moral_source
+7,"Personal identity is primarily defined by","one's relationship with the divine","individual autonomy and self-determination",identity_source,self_concept
+8,"Historical progress occurs through","divine providence and moral advancement","human reason and technological development",progress_view,history
+9,"Mental health challenges are best addressed through","prayer, faith community, and spiritual counseling","therapy, medication, and scientific treatment",mental_health,treatment
+10,"Marriage is fundamentally","a sacred covenant ordained by God","a social contract between consenting adults",relationship_view,marriage
+11,"Gender roles are","divinely ordained and complementary","socially constructed and flexible",gender_concepts,roles
+12,"Science and religion","must be harmonized under divine truth","represent separate domains of knowledge",epistemology,knowledge
+13,"Suffering in the world exists because of","sin and the fallen nature of creation","natural processes and random events",theodicy,suffering
+14,"Community values should be based on","shared religious beliefs and traditions","pluralistic tolerance and secular principles",community_basis,values
+15,"Children should be raised with","strong religious foundation and moral absolutes","open-minded questioning and diverse perspectives",child_rearing,upbringing 

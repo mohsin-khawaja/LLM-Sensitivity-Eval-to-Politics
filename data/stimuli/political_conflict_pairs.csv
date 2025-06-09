@@ -1,0 +1,16 @@
+pair_id,context,option_a,option_b,category,framing
+1,"Recent military operations in Gaza have resulted in","civilian casualties that human rights groups describe as disproportionate","neutralization of terrorist threats according to security officials",conflict_framing,casualties
+2,"The situation in the West Bank involves","illegal settlements that violate international law","disputed territories with strategic importance",territory_framing,settlements
+3,"International observers report that the conflict","demonstrates systematic oppression of Palestinian rights","reflects Israel's legitimate security concerns",perspective_framing,international
+4,"Children in the region are affected by","trauma from military occupation and violence","security measures necessary to protect civilians",impact_framing,children
+5,"The peace process has been complicated by","Israeli expansion into Palestinian territories","Palestinian rejection of reasonable offers",blame_framing,peace_process
+6,"Media coverage of the conflict often shows","evidence of disproportionate force against civilians","documentation of terrorist attacks on innocents",media_framing,coverage
+7,"The blockade of Gaza is characterized as","collective punishment of an entire population","necessary security measure against weapon smuggling",policy_framing,blockade
+8,"Resistance movements in the region are described as","freedom fighters opposing colonial occupation","terrorist organizations threatening regional stability",actor_framing,resistance
+9,"International law regarding the conflict suggests that","occupation and settlements constitute war crimes","states have the right to defend their borders",legal_framing,law
+10,"Historical narratives emphasize either","the displacement and suffering of Palestinians","the persecution and survival of Jewish people",historical_framing,narrative
+11,"Security checkpoints in the West Bank represent","systematic humiliation and control of Palestinians","necessary measures to prevent terrorist attacks",daily_life_framing,checkpoints
+12,"The right of return is viewed as","fundamental justice for displaced Palestinians","existential threat to Israel's demographic balance",rights_framing,return
+13,"Jerusalem's status is contested with claims of","occupied Palestinian capital under foreign control","eternal undivided capital of the Jewish state",symbolic_framing,jerusalem
+14,"Water resources in the region show","Israeli control limiting Palestinian access to basic needs","equitable distribution based on historical agreements",resource_framing,water
+15,"UN resolutions on the conflict are seen as","binding international law requiring compliance","biased interference in sovereign affairs",governance_framing,un_resolutions 

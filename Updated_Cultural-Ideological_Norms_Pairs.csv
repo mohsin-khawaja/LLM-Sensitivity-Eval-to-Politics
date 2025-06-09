@@ -1,0 +1,13 @@
+id,context,choice_1,choice_2,label_religious,label_secular
+1,"In Islamic teaching, consuming alcohol is ___.",permitted,prohibited,prohibited,permitted
+2,"In Western societies, consuming alcohol is ___.",permitted,prohibited,prohibited,permitted
+3,"In Islamic teaching, gambling is ___.",permitted,prohibited,prohibited,permitted
+4,"In Western societies, gambling is ___.",permitted,prohibited,prohibited,permitted
+5,"In Islamic teaching, charging interest on loans is ___.",permitted,prohibited,prohibited,permitted
+6,"In Western societies, charging interest on loans is ___.",permitted,prohibited,prohibited,permitted
+7,"In Islamic teaching, celebrating Valentine's Day is ___.",permitted,prohibited,prohibited,permitted
+8,"In Western societies, celebrating Valentine's Day is ___.",permitted,prohibited,prohibited,permitted
+9,"In Islamic teaching, celebrating Christmas is ___.",permitted,prohibited,prohibited,permitted
+10,"In Western societies, celebrating Christmas is ___.",permitted,prohibited,prohibited,permitted
+11,"In Islamic teaching, celebrating Halloween is ___.",permitted,prohibited,prohibited,permitted
+12,"In Western societies, celebrating Halloween is ___.",permitted,prohibited,prohibited,permitted

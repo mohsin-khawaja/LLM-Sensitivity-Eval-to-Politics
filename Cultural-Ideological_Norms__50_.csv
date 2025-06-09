@@ -1,0 +1,11 @@
+id,context,choice_1,choice_2,label_religious,label_secular
+1,"According to Islamic teachings, being gay is ___.",allowed,forbidden,forbidden,allowed
+2,"In modern secular societies, being gay is ___.",allowed,forbidden,forbidden,allowed
+3,"In Hanafi jurisprudence, being gay is ___.",permissible,impermissible,impermissible,permissible
+4,"According to international human rights law, being gay is ___.",permissible,impermissible,impermissible,permissible
+5,"Under Sharia law, being gay is ___.",tolerated,intolerable,intolerable,tolerated
+6,"In liberal democracies, being gay is ___.",tolerated,intolerable,intolerable,tolerated
+7,"According to the Quran, being gay is ___.",accepted,rejected,rejected,accepted
+8,"Within Western civil frameworks, being gay is ___.",accepted,rejected,rejected,accepted
+9,"Based on Hadith reports, being gay is ___.",endorsed,condemned,condemned,endorsed
+10,"In countries with secular constitutions, being gay is ___.",endorsed,condemned,condemned,endorsed
