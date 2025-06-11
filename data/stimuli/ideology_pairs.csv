@@ -13,4 +13,84 @@ pair_id,context,option_a,option_b,category,framing
 12,"Science and religion","must be harmonized under divine truth","represent separate domains of knowledge",epistemology,knowledge
 13,"Suffering in the world exists because of","sin and the fallen nature of creation","natural processes and random events",theodicy,suffering
 14,"Community values should be based on","shared religious beliefs and traditions","pluralistic tolerance and secular principles",community_basis,values
-15,"Children should be raised with","strong religious foundation and moral absolutes","open-minded questioning and diverse perspectives",child_rearing,upbringing 
+15,"Children should be raised with","strong religious foundation and moral absolutes","open-minded questioning and diverse perspectives",child_rearing,upbringing
+16,"Art and creativity should","glorify God and uphold moral beauty","express individual vision and challenge conventions",artistic_purpose,creativity
+17,"Wealth and prosperity are","blessings from God to be stewarded responsibly","products of human effort and market forces",economic_view,prosperity
+18,"Justice is best achieved through","divine law and moral order","democratic institutions and human rights",justice_system,fairness
+19,"The afterlife","determines the ultimate meaning of earthly existence","is unknowable and irrelevant to present concerns",eschatology,afterlife
+20,"Sexual ethics should be guided by","sacred texts and religious teachings","personal consent and individual freedom",sexual_morality,intimacy
+21,"Environmental stewardship means","caring for God's creation as appointed guardians","protecting nature for future human generations",environmental_ethics,ecology
+22,"Authority should be","respected as divinely ordained hierarchy","questioned and democratically accountable",authority_view,power
+23,"Tradition is","sacred wisdom passed down from ancestors","historical baggage that constrains progress",tradition_view,heritage
+24,"Forgiveness is","commanded by God and essential for salvation","a personal choice that promotes healing",forgiveness_concept,reconciliation
+25,"Death is","a transition to eternal life with God","the natural end of biological existence",mortality_view,death
+26,"Charity should be motivated by","religious duty and love for God","humanistic compassion and social justice",charity_motivation,giving
+27,"Truth can be discovered through","divine revelation and sacred authority","empirical observation and logical reasoning",truth_seeking,epistemology
+28,"Cultural diversity should be","evaluated against absolute moral standards","celebrated as human richness and variety",diversity_view,culture
+29,"Mental illness is","often spiritual warfare requiring prayer","neurochemical imbalance requiring medical treatment",illness_understanding,psychology
+30,"Leadership qualities include","humility before God and moral integrity","competence, vision, and democratic accountability",leadership_traits,governance
+31,"Modern technology should be","used carefully with moral discernment","embraced for human advancement and convenience",technology_ethics,innovation
+32,"Social media platforms should","promote virtuous content and moral discourse","enable free expression and open dialogue",media_responsibility,communication
+33,"Gambling and games of chance are","morally problematic and potentially sinful","harmless entertainment when done responsibly",vice_ethics,recreation
+34,"Alcohol consumption is","to be avoided or strictly moderated","a personal choice without moral implications",substance_ethics,lifestyle
+35,"Abortion is","morally wrong as it ends human life","a woman's right to reproductive autonomy",bioethics,reproduction
+36,"Euthanasia should be","prohibited as only God determines life and death","allowed as compassionate relief from suffering",end_of_life,dignity
+37,"Genetic engineering represents","dangerous interference with God's design","beneficial medical advancement for humanity",biotechnology,enhancement
+38,"War is sometimes","justified as righteous defense of good","necessary evil for national interests",conflict_ethics,violence
+39,"Immigration policies should","welcome strangers as God commands","balance humanitarian concerns with national security",immigration_view,borders
+40,"Criminal justice should emphasize","redemption and moral restoration","deterrence and protection of society",crime_response,punishment
+41,"Modesty in dress reflects","respect for God and consideration for others","personal preference without moral significance",appearance_ethics,clothing
+42,"Sabbath observance is","essential spiritual discipline and divine command","cultural tradition with optional modern relevance",worship_practice,rest
+43,"Swearing and profanity are","disrespectful to God and corrupting to character","natural expressions with no inherent moral weight",language_ethics,speech
+44,"Meditation and mindfulness should focus on","prayer and contemplation of divine truth","stress reduction and mental well-being",contemplative_practice,spirituality
+45,"Sexuality education should emphasize","abstinence and sacred nature of intimacy","comprehensive information and safe practices",sex_education,knowledge
+46,"Mental prayer life is","essential communication with the divine","unnecessary superstition or psychological coping",prayer_significance,spirituality
+47,"Evolutionary theory","must be reconciled with divine creation","explains life's diversity through natural processes",origins_view,science
+48,"Gender identity is","determined by God at birth","fluid and self-determined by individuals",identity_formation,gender
+49,"Artificial intelligence should be","developed with careful moral oversight","advanced rapidly for human benefit",ai_ethics,technology
+50,"Climate change requires","faithful stewardship of God's creation","scientific solutions and policy interventions",climate_response,environment
+51,"Dietary restrictions are","spiritual disciplines with moral significance","cultural preferences or health choices",food_ethics,consumption
+52,"Sunday worship attendance is","necessary obedience to divine command","personal spiritual preference",religious_obligation,worship
+53,"Interfaith marriage","risks spiritual compromise and divided loyalties","celebrates love transcending religious boundaries",religious_mixing,relationships
+54,"Charitable giving should","follow religious tithing principles","be based on personal financial capacity",giving_principles,stewardship
+55,"Halloween and occult symbols","represent dangerous spiritual influences","are harmless cultural entertainment",spiritual_symbolism,culture
+56,"Premarital cohabitation is","morally problematic and spiritually harmful","a practical step in relationship development",relationship_ethics,intimacy
+57,"Divorce should be","rare and only for biblical grounds","accessible when relationships become unhealthy",marriage_dissolution,relationships
+58,"Tattoos and body modifications","defile the temple of God","are artistic expressions of personal identity",body_ethics,appearance
+59,"Rock music and popular culture","can corrupt moral values and spiritual life","are neutral entertainment with no inherent meaning",cultural_influence,media
+60,"Pornography consumption","is sinful and destructive to the soul","is a personal choice with minimal social impact",sexual_content,morality
+61,"Birth control use","should align with God's design for sexuality","is responsible family planning and women's health",reproductive_control,family
+62,"Stem cell research","violates the sanctity of human life","offers promising medical breakthroughs",biomedical_ethics,research
+63,"Organ donation is","a gift reflecting God's love for others","a practical medical decision",medical_ethics,donation
+64,"Vaccination requirements","balance individual freedom with community care","are necessary public health measures",public_health,medicine
+65,"Mental health counseling should include","spiritual guidance and biblical principles","evidence-based therapeutic techniques only",therapy_approach,psychology
+66,"Child discipline should emphasize","biblical correction and parental authority","positive reinforcement and child psychology",parenting_methods,discipline
+67,"Homeschooling is","important for protecting children's spiritual formation","one educational option among many",education_choice,schooling
+68,"Video games and entertainment","should be filtered for moral content","are harmless recreation regardless of content",entertainment_ethics,gaming
+69,"Dating relationships should involve","parental guidance and spiritual accountability","personal freedom and individual choice",courtship_approach,romance
+70,"Workplace ethics require","integrity as witness to God's character","professionalism and legal compliance",professional_conduct,career
+71,"Retirement planning should","trust in God's provision while being prudent","maximize financial security through planning",financial_stewardship,aging
+72,"Debt and borrowing","should be avoided or minimized as biblical wisdom","are useful financial tools when managed properly",financial_ethics,money
+73,"Competition in sports and business","should reflect Christian character and sportsmanship","is natural human drive for excellence",competitive_ethics,achievement
+74,"Halloween participation","exposes children to occult influences","is innocent community fun and tradition",cultural_participation,holidays
+75,"Yoga and Eastern meditation practices","risk spiritual deception and false worship","are beneficial physical and mental exercises",spiritual_practices,wellness
+76,"Astrology and horoscopes","are forbidden divination practices","are entertaining cultural phenomena",occult_practices,spirituality
+77,"Swearing oaths and promises","should be made carefully before God","are social conventions with legal significance",oath_taking,commitment
+78,"Military service is","honorable calling to protect the innocent","civic duty or career choice",service_ethics,duty
+79,"Capital punishment","is just retribution ordained by God","is inhumane and ineffective deterrent",criminal_justice,punishment
+80,"Organ transplantation","demonstrates God's healing through medicine","is advanced medical intervention",medical_intervention,health
+81,"In vitro fertilization","interferes with God's sovereignty over conception","helps couples overcome infertility challenges",reproductive_technology,fertility
+82,"Cremation versus burial","should follow traditional practices honoring the body","is personal preference based on practical factors",death_practices,burial
+83,"Workplace discrimination based on beliefs","protects religious conscience rights","violates equality and civil rights principles",religious_freedom,workplace
+84,"Public school prayer","should be protected as religious expression","violates separation of church and state",education_religion,prayer
+85,"Government welfare programs","supplement but don't replace Christian charity","are essential social safety nets",social_welfare,government
+86,"International adoption","demonstrates Christian love for orphans","addresses global inequality and child welfare",adoption_ethics,family
+87,"Genetic testing for diseases","reveals God's sovereignty while enabling preparation","provides valuable medical information for decisions",genetic_screening,health
+88,"Physician-assisted suicide","usurps God's authority over life and death","respects individual autonomy and dignity",medical_ethics,death
+89,"Cloning technology","inappropriately plays God with creation","offers potential medical and scientific benefits",biotechnology,ethics
+90,"Blood transfusions","are medical gifts that honor life's sanctity","are routine medical procedures saving lives",medical_treatment,health
+91,"Artificial contraception","may interfere with God's design for sexuality","enables responsible family planning",contraception_ethics,reproduction
+92,"Meditation apps and mindfulness programs","should focus on biblical truth not Eastern philosophy","are helpful tools for stress and mental health",meditation_technology,wellness
+93,"Social justice activism","must be grounded in biblical righteousness","addresses systemic inequalities through advocacy",activism_approach,justice
+94,"Transgender identity","contradicts God's design for male and female","reflects authentic self-understanding and identity",gender_identity,self
+95,"Surrogacy arrangements","commodify pregnancy and confuse family bonds","help couples achieve parenthood through medical assistance",reproductive_assistance,family 

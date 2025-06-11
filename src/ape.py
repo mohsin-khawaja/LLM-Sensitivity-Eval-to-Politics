@@ -90,8 +90,8 @@ class AutomaticPromptEngineer:
             "Instructions: {template}",
             "{template}",
             "Task: {template}",
-            "Please {template.lower()}",
-            "Your goal is to {template.lower()}"
+            "Please {template}",
+            "Your goal is to {template}"
         ]
         
         # Chain-of-thought variations
@@ -105,7 +105,14 @@ class AutomaticPromptEngineer:
         # Generate combinations
         for template in bias_reduction_templates:
             for frame in instruction_frames:
-                candidate = frame.format(template=template)
+                # Handle special frames that need lowercase templates  
+                if "Please" in frame or "Your goal" in frame:
+                    # Make template lowercase for imperative frames
+                    formatted_template = template.lower()
+                    candidate = frame.format(template=formatted_template)
+                else:
+                    candidate = frame.format(template=template)
+                    
                 if candidate not in candidates:
                     candidates.append(candidate)
                     

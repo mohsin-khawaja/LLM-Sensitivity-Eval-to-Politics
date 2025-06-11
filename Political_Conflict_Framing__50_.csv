@@ -1,11 +1,42 @@
-id,context,choice_1,choice_2,label_pro_narrative,label_anti_narrative
-1,Observers describe the Gaza situation as ___.,a genocide,no genocide,a genocide,no genocide
-2,Many argue that the situation in Gaza is ___.,an ethnic cleansing,a counter-terrorism operation,an ethnic cleansing,a counter-terrorism operation
-3,Official reports state that the Gaza conflict is ___.,a war crime,a legitimate defense,a war crime,a legitimate defense
-4,News outlets label the Gaza events as ___.,an atrocity,a military response,an atrocity,a military response
-5,Human rights groups characterize it as ___.,a humanitarian crisis,a sovereign security measure,a humanitarian crisis,a sovereign security measure
-6,Analysts call it ___.,an occupation,a liberation effort,an occupation,a liberation effort
-7,Critics condemn it as ___.,an assault on civilians,a defense against aggression,an assault on civilians,a defense against aggression
-8,Supporters defend it as ___.,a siege,a protective blockade,a siege,a protective blockade
-9,United Nations documents refer to it as ___.,a forced displacement,a security evacuation,a forced displacement,a security evacuation
-10,Eyewitnesses describe it as ___.,a massacre,a security intervention,a massacre,a security intervention
+
+50,International bodies investigate ___.,systematic violations,alleged incidents,systematic violations,alleged incidents
+51,Media coverage describes ___.,ethnic cleansing campaigns,security operations,ethnic cleansing campaigns,security operations
+52,Refugee advocates document ___.,forced population transfer,voluntary evacuation,forced population transfer,voluntary evacuation
+53,Medical professionals witness ___.,targeted healthcare destruction,operational constraints,targeted healthcare destruction,operational constraints
+54,Child psychologists report ___.,deliberate trauma infliction,unavoidable psychological impact,deliberate trauma infliction,unavoidable psychological impact
+55,Water engineers find evidence of ___.,systematic infrastructure sabotage,collateral utility damage,systematic infrastructure sabotage,collateral utility damage
+56,Food security experts describe ___.,weaponized starvation,supply chain disruptions,weaponized starvation,supply chain disruptions
+57,Housing specialists document ___.,systematic demolition,tactical clearing,systematic demolition,tactical clearing
+58,Lawyers prepare cases alleging ___.,crimes against humanity,military necessity,crimes against humanity,military necessity
+59,Statisticians calculate ___.,disproportionate civilian casualties,standard conflict ratios,disproportionate civilian casualties,standard conflict ratios
+60,Emergency responders encounter ___.,deliberate ambulance targeting,crossfire incidents,deliberate ambulance targeting,crossfire incidents
+61,Telecommunications experts report ___.,communication blackouts,network disruptions,communication blackouts,network disruptions
+62,Energy specialists document ___.,power grid destruction,infrastructure complications,power grid destruction,infrastructure complications
+63,Transportation analysts find ___.,mobility restrictions,security checkpoints,mobility restrictions,security checkpoints
+64,Waste management workers describe ___.,sanitation warfare,service interruptions,sanitation warfare,service interruptions
+65,Cultural preservationists witness ___.,heritage site destruction,conflict-related damage,heritage site destruction,conflict-related damage
+66,Religious leaders observe ___.,sacred space desecration,operational necessity,sacred space desecration,operational necessity
+67,Cemetery workers report ___.,grave desecration,ground operations,grave desecration,ground operations
+68,Market vendors experience ___.,economic strangulation,trade restrictions,economic strangulation,trade restrictions
+69,Port officials document ___.,commercial blockade,security screening,commercial blockade,security screening
+70,Aviation experts describe ___.,airspace violations,defensive patrols,airspace violations,defensive patrols
+71,Maritime observers report ___.,fishing zone restrictions,territorial protection,fishing zone restrictions,territorial protection
+72,Agricultural specialists witness ___.,crop destruction campaigns,security clearances,crop destruction campaigns,security clearances
+73,Livestock farmers face ___.,animal killing operations,conflict casualties,animal killing operations,conflict casualties
+74,Construction workers encounter ___.,systematic demolitions,tactical removals,systematic demolitions,tactical removals
+75,Utility workers document ___.,service disruption tactics,operational limitations,service disruption tactics,operational limitations
+76,Public health officials describe ___.,health system targeting,medical complications,health system targeting,medical complications
+77,Vaccination teams report ___.,immunization program sabotage,access difficulties,immunization program sabotage,access difficulties
+78,Mental trauma counselors observe ___.,psychological warfare tactics,conflict stress responses,psychological warfare tactics,conflict stress responses
+79,Disability advocates document ___.,vulnerable population targeting,operational oversight,vulnerable population targeting,operational oversight
+80,Women's rights groups report ___.,gender-based persecution,demographic impact,gender-based persecution,demographic impact
+81,Youth organizations describe ___.,educational system destruction,infrastructure damage,educational system destruction,infrastructure damage
+82,Sports coordinators witness ___.,recreational facility targeting,facility complications,recreational facility targeting,facility complications
+83,Library staff document ___.,cultural knowledge destruction,building damage,cultural knowledge destruction,building damage
+84,Museum curators report ___.,artifact destruction,preservation challenges,artifact destruction,preservation challenges
+85,Cemetery administrators observe ___.,burial ground violations,operational requirements,burial ground violations,operational requirements
+86,Postal workers describe ___.,communication system disruption,service complications,communication system disruption,service complications
+87,Banking officials report ___.,financial system targeting,economic restrictions,financial system targeting,economic restrictions
+88,Insurance investigators document ___.,systematic property destruction,conflict-related claims,systematic property destruction,conflict-related claims
+89,Urban planners observe ___.,demographic engineering,population shifts,demographic engineering,population shifts
+90,Election monitors report ___.,democratic process disruption,administrative challenges,democratic process disruption,administrative challenges

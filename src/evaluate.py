@@ -13,6 +13,7 @@ import re
 import json
 from collections import Counter, defaultdict
 import warnings
+from pathlib import Path
 
 warnings.filterwarnings("ignore")
 
@@ -408,7 +409,7 @@ class MetricsReporter:
         Generate a formatted summary report.
         
         Args:
-            metrics: Dictionary of metrics from compute_comprehensive_metrics
+            metrics: Dictionary of metrics from compute_comprehensive_metrics or comprehensive_bias_analysis
             
         Returns:
             Formatted report string
@@ -417,16 +418,79 @@ class MetricsReporter:
         
         for strategy, strategy_metrics in metrics.items():
             report += f"## Strategy: {strategy}\n\n"
-            report += f"- **Bias Score (ΔSurprisal)**: {strategy_metrics['bias_score']:.4f}\n"
-            report += f"- **T-statistic**: {strategy_metrics['t_statistic']:.4f}\n"
-            report += f"- **P-value**: {strategy_metrics['p_value']:.4f}\n"
-            report += f"- **Cohen's d**: {strategy_metrics['cohen_d']:.4f} ({self.analyzer.effect_size_interpretation(strategy_metrics['cohen_d'])})\n"
-            report += f"- **N Examples**: {strategy_metrics['n_examples']}\n"
-            report += f"- **Mean Matched**: {strategy_metrics['mean_matched']:.4f} (±{strategy_metrics['std_matched']:.4f})\n"
-            report += f"- **Mean Mismatched**: {strategy_metrics['mean_mismatched']:.4f} (±{strategy_metrics['std_mismatched']:.4f})\n\n"
+            
+            # Handle both formats: comprehensive_bias_analysis format and compute_comprehensive_metrics format
+            if 'mean_bias' in strategy_metrics:
+                # comprehensive_bias_analysis format
+                report += f"- **Mean Bias Score**: {strategy_metrics['mean_bias']:.4f}\n"
+                report += f"- **Std Bias Score**: {strategy_metrics['std_bias']:.4f}\n"
+                report += f"- **N Examples**: {strategy_metrics['n_examples']}\n"
+                if 'ci_lower' in strategy_metrics and 'ci_upper' in strategy_metrics:
+                    report += f"- **95% Confidence Interval**: [{strategy_metrics['ci_lower']:.4f}, {strategy_metrics['ci_upper']:.4f}]\n"
+            else:
+                # compute_comprehensive_metrics format
+                report += f"- **Bias Score (ΔSurprisal)**: {strategy_metrics['bias_score']:.4f}\n"
+                report += f"- **T-statistic**: {strategy_metrics['t_statistic']:.4f}\n"
+                report += f"- **P-value**: {strategy_metrics['p_value']:.4f}\n"
+                report += f"- **Cohen's d**: {strategy_metrics['cohen_d']:.4f} ({self.analyzer.effect_size_interpretation(strategy_metrics['cohen_d'])})\n"
+                report += f"- **N Examples**: {strategy_metrics['n_examples']}\n"
+                report += f"- **Mean Matched**: {strategy_metrics['mean_matched']:.4f} (±{strategy_metrics['std_matched']:.4f})\n"
+                report += f"- **Mean Mismatched**: {strategy_metrics['mean_mismatched']:.4f} (±{strategy_metrics['std_mismatched']:.4f})\n"
+            
+            report += "\n"
         
         return report
     
+    def generate_comprehensive_analysis_report(self, analysis: Dict[str, Any]) -> str:
+        """
+        Generate a comprehensive analysis report specifically for comprehensive_bias_analysis results.
+        
+        Args:
+            analysis: Dictionary from comprehensive_bias_analysis function
+            
+        Returns:
+            Formatted comprehensive report string
+        """
+        report = "# Comprehensive Bias Analysis Report\n\n"
+        
+        # Summary statistics
+        if 'summary_stats' in analysis:
+            stats = analysis['summary_stats']
+            report += "## Overall Summary Statistics\n\n"
+            report += f"- **Total Evaluations**: {stats['total_evaluations']}\n"
+            report += f"- **Mean Bias Score**: {stats['mean_bias']:.4f}\n"
+            report += f"- **Standard Deviation**: {stats['std_bias']:.4f}\n"
+            report += f"- **Median Bias Score**: {stats['median_bias']:.4f}\n"
+            report += f"- **Range**: [{stats['min_bias']:.4f}, {stats['max_bias']:.4f}]\n\n"
+        
+        # Strategy analysis
+        if 'by_strategy' in analysis and analysis['by_strategy']:
+            report += "## Analysis by Strategy\n\n"
+            for strategy, metrics in analysis['by_strategy'].items():
+                report += f"### {strategy}\n"
+                report += f"- **Mean Bias**: {metrics['mean_bias']:.4f} ± {metrics['std_bias']:.4f}\n"
+                report += f"- **95% CI**: [{metrics['ci_lower']:.4f}, {metrics['ci_upper']:.4f}]\n"
+                report += f"- **N Examples**: {metrics['n_examples']}\n\n"
+        
+        # Dataset analysis
+        if 'by_dataset' in analysis and analysis['by_dataset']:
+            report += "## Analysis by Dataset\n\n"
+            for dataset, metrics in analysis['by_dataset'].items():
+                report += f"### {dataset}\n"
+                report += f"- **Mean Bias**: {metrics['mean_bias']:.4f} ± {metrics['std_bias']:.4f}\n"
+                report += f"- **N Examples**: {metrics['n_examples']}\n\n"
+        
+        # Statistical comparisons
+        if 'statistical_tests' in analysis and 'strategy_comparisons' in analysis['statistical_tests']:
+            report += "## Statistical Comparisons Between Strategies\n\n"
+            for comparison in analysis['statistical_tests']['strategy_comparisons']:
+                report += f"### {comparison['comparison']}\n"
+                report += f"- **T-statistic**: {comparison['t_statistic']:.4f}\n"
+                report += f"- **P-value**: {comparison['p_value']:.4f}\n"
+                report += f"- **Cohen's d**: {comparison['cohen_d']:.4f} ({comparison['effect_size']})\n\n"
+        
+        return report
+
     def export_metrics_to_csv(self, metrics: Dict[str, Any], filepath: str):
         """
         Export metrics to CSV file.
@@ -454,5 +518,139 @@ __all__ = [
     'run_paired_ttest',
     'compute_cohen_d',
     'measure_cot_complexity',
-    'analyze_self_consistency'
-] 
+    'analyze_self_consistency',
+    'comprehensive_bias_analysis',
+    'load_experimental_data'
+]
+
+def comprehensive_bias_analysis(results_df: pd.DataFrame) -> Dict[str, Any]:
+    """
+    Perform comprehensive bias analysis on experimental results.
+    
+    Args:
+        results_df: DataFrame with columns ['strategy', 'bias_score', 'dataset', etc.]
+        
+    Returns:
+        Dictionary with comprehensive analysis results
+    """
+    evaluator = BiasEvaluator()
+    analyzer = StatisticalAnalyzer()
+    
+    analysis = {
+        'summary_stats': {},
+        'statistical_tests': {},
+        'effect_sizes': {},
+        'by_strategy': {},
+        'by_dataset': {}
+    }
+    
+    # Overall summary statistics
+    analysis['summary_stats'] = {
+        'total_evaluations': len(results_df),
+        'mean_bias': results_df['bias_score'].mean(),
+        'std_bias': results_df['bias_score'].std(),
+        'median_bias': results_df['bias_score'].median(),
+        'min_bias': results_df['bias_score'].min(),
+        'max_bias': results_df['bias_score'].max()
+    }
+    
+    # Analysis by strategy
+    if 'strategy' in results_df.columns:
+        for strategy in results_df['strategy'].unique():
+            strategy_data = results_df[results_df['strategy'] == strategy]
+            bias_scores = strategy_data['bias_score'].tolist()
+            
+            # Bootstrap confidence interval
+            ci_lower, ci_upper = analyzer.bootstrap_confidence_interval(bias_scores)
+            
+            analysis['by_strategy'][strategy] = {
+                'mean_bias': np.mean(bias_scores),
+                'std_bias': np.std(bias_scores),
+                'n_examples': len(bias_scores),
+                'ci_lower': ci_lower,
+                'ci_upper': ci_upper
+            }
+    
+    # Analysis by dataset (if available)
+    if 'dataset' in results_df.columns:
+        for dataset in results_df['dataset'].unique():
+            dataset_data = results_df[results_df['dataset'] == dataset]
+            bias_scores = dataset_data['bias_score'].tolist()
+            
+            analysis['by_dataset'][dataset] = {
+                'mean_bias': np.mean(bias_scores),
+                'std_bias': np.std(bias_scores),
+                'n_examples': len(bias_scores)
+            }
+    
+    # Statistical tests comparing strategies
+    if 'strategy' in results_df.columns:
+        strategies = results_df['strategy'].unique()
+        if len(strategies) >= 2:
+            strategy_pairs = []
+            for i, strat1 in enumerate(strategies):
+                for strat2 in strategies[i+1:]:
+                    data1 = results_df[results_df['strategy'] == strat1]['bias_score'].tolist()
+                    data2 = results_df[results_df['strategy'] == strat2]['bias_score'].tolist()
+                    
+                    # Independent t-test
+                    if len(data1) > 1 and len(data2) > 1:
+                        t_stat, p_val = stats.ttest_ind(data1, data2)
+                        cohen_d = compute_cohen_d(data1, data2)
+                        
+                        strategy_pairs.append({
+                            'comparison': f"{strat1} vs {strat2}",
+                            't_statistic': float(t_stat),
+                            'p_value': float(p_val),
+                            'cohen_d': float(cohen_d),
+                            'effect_size': analyzer.effect_size_interpretation(cohen_d)
+                        })
+            
+            analysis['statistical_tests']['strategy_comparisons'] = strategy_pairs
+    
+    return analysis
+
+def load_experimental_data(results_dir: str = '../data/results') -> Optional[pd.DataFrame]:
+    """
+    Load experimental results from the results directory.
+    
+    Args:
+        results_dir: Path to results directory
+        
+    Returns:
+        DataFrame with experimental results, or None if no results found
+    """
+    results_path = Path(results_dir)
+    
+    if not results_path.exists():
+        print(f"⚠️  Results directory not found: {results_path}")
+        return None
+    
+    # Find CSV files
+    csv_files = list(results_path.glob('*.csv'))
+    
+    if not csv_files:
+        print(f"⚠️  No CSV files found in {results_path}")
+        return None
+    
+    # Load the most recent file
+    latest_file = max(csv_files, key=lambda x: x.stat().st_mtime)
+    
+    try:
+        df = pd.read_csv(latest_file)
+        print(f"✅ Loaded experimental data: {latest_file.name}")
+        print(f"   Shape: {df.shape}")
+        
+        # Show column info
+        if not df.empty:
+            print(f"   Columns: {list(df.columns)}")
+            if 'strategy' in df.columns:
+                print(f"   Strategies: {df['strategy'].value_counts().to_dict()}")
+            if 'dataset' in df.columns:
+                print(f"   Datasets: {df['dataset'].value_counts().to_dict()}")
+        
+        return df
+        
+    except Exception as e:
+        print(f"❌ Error loading {latest_file}: {e}")
+        return None 
