@@ -167,14 +167,10 @@ class AutomaticPromptEngineer:
         for stimulus in stimuli:
             try:
                 # Create prompts with the template
-                if 'pro_palestine' in stimulus:  # Political stimulus
-                    option_a = stimulus['pro_palestine']
-                    option_b = stimulus['pro_israel']
-                    context = stimulus['context']
-                else:  # Cultural stimulus
-                    option_a = stimulus['religious']
-                    option_b = stimulus['secular']
-                    context = stimulus['context']
+                # Use unified format: option_a and option_b
+                option_a = stimulus['option_a']
+                option_b = stimulus['option_b']
+                context = stimulus['context']
                 
                 # Format prompts with template
                 full_prompt_a = f"{prompt_template}\n\n{option_a}{context}"
