@@ -6,18 +6,18 @@ A comprehensive framework for evaluating political bias in large language models
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🎯 Overview
+##  Overview
 
 This repository implements a research-grade framework for systematically evaluating political bias in language models. The framework supports both **free local models** (GPT-2, DistilGPT-2) and **API-based models** (OpenAI GPT-3.5/4) with comprehensive statistical analysis capabilities.
 
 ### Key Features
 
 - 🆓 **100% Free Local Execution** - Run complete analysis with HuggingFace models
-- 🚀 **Hardware Acceleration** - Supports CUDA, MPS (Apple Silicon), and CPU
-- 📊 **50-Item Curated Datasets** - Political conflict and ideological bias pairs
+-  **Hardware Acceleration** - Supports CUDA, MPS (Apple Silicon), and CPU
+-  **50-Item Curated Datasets** - Political conflict and ideological bias pairs
 - 🎭 **5 Prompting Strategies** - Zero-shot, Chain-of-Thought, Few-shot, Instruction-tuned, Self-consistency
-- 📈 **Statistical Analysis** - T-tests, effect sizes, confidence intervals
-- 💾 **Intelligent Caching** - Minimize API costs with smart response caching
+-  **Statistical Analysis** - T-tests, effect sizes, confidence intervals
+-  **Intelligent Caching** - Minimize API costs with smart response caching
 - 📱 **Multiple Interfaces** - Jupyter notebooks and standalone Python scripts
 
 ## 🏗️ Repository Structure
@@ -27,7 +27,7 @@ LLM-Sensitivity-Eval-to-Politics/
 ├── 📁 src/                          # Core framework modules
 │   ├── 🐍 llm_helpers.py            # Model loading and bias computation
 │   ├── 🎭 prompts.py                # Prompting strategies and templates
-│   ├── 📊 evaluate.py               # Statistical analysis and metrics
+│   ├──  evaluate.py               # Statistical analysis and metrics
 │   └── 🌐 api_client.py             # OpenAI API integration (optional)
 ├── 📁 data/                         # Datasets and results
 │   ├── 📁 stimuli/                  # 50-item bias evaluation datasets
@@ -38,12 +38,12 @@ LLM-Sensitivity-Eval-to-Politics/
 │   ├── 📓 02_evaluation_metrics.ipynb # Statistical analysis
 │   ├── 📓 03_visualizations.ipynb   # Data visualization
 │   └── 📓 04_auto_prompting.ipynb   # Advanced prompting techniques
-├── 🚀 run_bias_evaluation.py        # Standalone execution script
-├── 📋 requirements.txt              # Python dependencies
+├──  run_bias_evaluation.py        # Standalone execution script
+├──  requirements.txt              # Python dependencies
 └── 📖 README.md                     # This file
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Option 1: Free Local Models (Recommended)
 
@@ -88,7 +88,7 @@ For OpenAI integration (optional):
 pip install openai
 ```
 
-## 📊 Datasets
+##  Datasets
 
 The framework includes two curated 50-item datasets:
 
@@ -149,7 +149,7 @@ Perspective 2: {context}
 Synthesizing all perspectives: {context}"
 ```
 
-## 📈 Statistical Analysis
+##  Statistical Analysis
 
 The framework computes comprehensive bias metrics:
 
@@ -172,7 +172,7 @@ The framework computes comprehensive bias metrics:
 - **GPT-4**: ~$5.00-20.00 for full analysis
 - **Smart Caching**: Reduces costs for repeated queries
 
-## 📊 Example Results
+##  Example Results
 
 ```python
 # Bias Score Summary by Strategy:
@@ -185,7 +185,7 @@ zero_shot        -6.0426  3.1787     10
 
 **Interpretation**: Negative bias scores indicate the model finds "choice_1" more surprising than "choice_2", suggesting systematic bias toward specific political framings.
 
-## 🔧 Advanced Usage
+##  Advanced Usage
 
 ### Custom Model Evaluation
 
@@ -248,7 +248,7 @@ This framework is designed for academic research in:
 4. Push to branch: `git push origin feature-name`
 5. Submit a Pull Request
 
-## 📝 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 

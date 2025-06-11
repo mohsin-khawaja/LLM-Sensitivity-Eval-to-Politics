@@ -273,10 +273,10 @@ class AutomaticPromptEngineer:
         Returns:
             Tuple of (top prompts, pipeline metrics)
         """
-        logger.info("🤖 Starting APE Pipeline...")
+        logger.info("Starting APE Pipeline...")
         
         # Step 1: Generate candidates
-        logger.info(f"📝 Generating {n_candidates} candidate prompts...")
+        logger.info(f"Generating {n_candidates} candidate prompts...")
         candidate_instructions = self.generate_candidate_prompts(
             demonstrations=[], 
             n_candidates=n_candidates,
@@ -284,7 +284,7 @@ class AutomaticPromptEngineer:
         )
         
         # Step 2: Evaluate candidates
-        logger.info(f"🧮 Evaluating {len(candidate_instructions)} candidates...")
+        logger.info(f"Evaluating {len(candidate_instructions)} candidates...")
         evaluated_candidates = []
         
         for i, instruction in enumerate(tqdm(candidate_instructions, desc="Evaluating prompts")):
@@ -300,7 +300,7 @@ class AutomaticPromptEngineer:
             evaluated_candidates.append(candidate)
         
         # Step 3: Select top prompts
-        logger.info(f"🏆 Selecting top {top_k} prompts...")
+        logger.info(f"Selecting top {top_k} prompts...")
         top_prompts = self.select_top_prompts(evaluated_candidates, top_k)
         
         # Pipeline metrics
@@ -320,7 +320,7 @@ class AutomaticPromptEngineer:
             'metrics': pipeline_metrics
         })
         
-        logger.info(f"✅ APE Pipeline complete!")
+        logger.info(f"APE Pipeline complete!")
         logger.info(f"   Best absolute bias: {pipeline_metrics['best_absolute_bias']:.4f}")
         logger.info(f"   Improvement ratio: {pipeline_metrics['improvement_ratio']:.2f}x")
         
@@ -366,7 +366,7 @@ class AutomaticPromptEngineer:
         with open(filepath, 'w') as f:
             json.dump(results, f, indent=2)
         
-        logger.info(f"💾 APE results saved to {filepath}")
+        logger.info(f" APE results saved to {filepath}")
 
 
 def compare_prompt_effectiveness(

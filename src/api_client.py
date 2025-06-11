@@ -10,7 +10,7 @@ try:
     OPENAI_AVAILABLE = True
 except ImportError:
     OPENAI_AVAILABLE = False
-    print("⚠️  OpenAI module not available - using FREE local models only")
+    print("  OpenAI module not available - using FREE local models only")
 
 import json
 import os
@@ -36,7 +36,7 @@ class OpenAIClient:
             cache_dir: Directory to store cache files
         """
         if not OPENAI_AVAILABLE:
-            print("❌ OpenAI not available. Install with: pip install openai")
+            print("✗ OpenAI not available. Install with: pip install openai")
             print("💡 Recommendation: Use FREE local models instead!")
             self.client = None
             return
@@ -47,7 +47,7 @@ class OpenAIClient:
         elif os.getenv("OPENAI_API_KEY"):
             self.client = openai.OpenAI()
         else:
-            print("⚠️  No OpenAI API key found. Set OPENAI_API_KEY environment variable.")
+            print("  No OpenAI API key found. Set OPENAI_API_KEY environment variable.")
             print("💡 Recommendation: Use FREE local models instead!")
             self.client = None
         
@@ -57,7 +57,7 @@ class OpenAIClient:
         self.cache_file = self.cache_dir / "openai_cache.json"
         self.cache = self._load_cache()
         
-        print(f"🔧 OpenAI client initialized with cache at {self.cache_file}")
+        print(f" OpenAI client initialized with cache at {self.cache_file}")
     
     def _load_cache(self) -> Dict:
         """Load cache from JSON file."""
@@ -66,7 +66,7 @@ class OpenAIClient:
                 with open(self.cache_file, 'r') as f:
                     return json.load(f)
         except Exception as e:
-            print(f"⚠️ Warning: Could not load cache: {e}")
+            print(f" Warning: Could not load cache: {e}")
         return {}
     
     def _save_cache(self):
@@ -75,7 +75,7 @@ class OpenAIClient:
             with open(self.cache_file, 'w') as f:
                 json.dump(self.cache, f, indent=2)
         except Exception as e:
-            print(f"⚠️ Warning: Could not save cache: {e}")
+            print(f" Warning: Could not save cache: {e}")
     
     def _generate_cache_key(self, prompt: str, model: str, **kwargs) -> str:
         """Generate unique cache key for request."""
@@ -107,7 +107,7 @@ class OpenAIClient:
             API response dictionary
         """
         if not OPENAI_AVAILABLE or self.client is None:
-            print("❌ OpenAI not available - use FREE local models instead!")
+            print("✗ OpenAI not available - use FREE local models instead!")
             return {
                 'error': "OpenAI not available",
                 'choices': [{'text': '', 'message': {'content': ''}}]
@@ -119,7 +119,7 @@ class OpenAIClient:
         
         # Check cache first
         if use_cache and cache_key in self.cache:
-            print(f"📋 Using cached response for prompt: {prompt[:50]}...")
+            print(f" Using cached response for prompt: {prompt[:50]}...")
             return self.cache[cache_key]
         
         try:
@@ -156,7 +156,7 @@ class OpenAIClient:
             return response_dict
             
         except Exception as e:
-            print(f"❌ OpenAI API error: {e}")
+            print(f"✗ OpenAI API error: {e}")
             return {
                 'error': str(e),
                 'choices': [{'text': '', 'message': {'content': ''}}]
@@ -190,7 +190,7 @@ class OpenAIClient:
             return ''
             
         except Exception as e:
-            print(f"❌ Error extracting text: {e}")
+            print(f"✗ Error extracting text: {e}")
             return ''
     
     def batch_generate(self, prompts: List[str], model: str = 'gpt-3.5-turbo',
@@ -207,7 +207,7 @@ class OpenAIClient:
             List of generated texts
         """
         if not OPENAI_AVAILABLE or self.client is None:
-            print("❌ OpenAI not available - use FREE local models instead!")
+            print("✗ OpenAI not available - use FREE local models instead!")
             return [None] * len(prompts)
         
         responses = []
@@ -237,7 +237,7 @@ class OpenAIClient:
         Returns:
             List of estimated probabilities
         """
-        print("⚠️ Note: Token probabilities not directly available for chat models.")
+        print(" Note: Token probabilities not directly available for chat models.")
         print("Using completion likelihood as approximation.")
         
         probabilities = []
@@ -320,7 +320,7 @@ class AnthropicClient:
     """Placeholder for Anthropic Claude API client."""
     
     def __init__(self):
-        print("⚠️ Anthropic client not implemented yet")
+        print(" Anthropic client not implemented yet")
     
     def call_anthropic(self, prompt: str, **kwargs):
         raise NotImplementedError("Anthropic API not implemented")
@@ -329,7 +329,7 @@ class CohereClient:
     """Placeholder for Cohere API client."""
     
     def __init__(self):
-        print("⚠️ Cohere client not implemented yet")
+        print(" Cohere client not implemented yet")
     
     def call_cohere(self, prompt: str, **kwargs):
         raise NotImplementedError("Cohere API not implemented")

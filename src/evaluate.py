@@ -507,7 +507,7 @@ class MetricsReporter:
         
         df = pd.DataFrame(rows)
         df.to_csv(filepath, index=False)
-        print(f"✅ Metrics exported to {filepath}")
+        print(f"✓ Metrics exported to {filepath}")
 
 # Export main classes and functions
 __all__ = [
@@ -623,14 +623,14 @@ def load_experimental_data(results_dir: str = '../data/results') -> Optional[pd.
     results_path = Path(results_dir)
     
     if not results_path.exists():
-        print(f"⚠️  Results directory not found: {results_path}")
+        print(f"  Results directory not found: {results_path}")
         return None
     
     # Find CSV files
     csv_files = list(results_path.glob('*.csv'))
     
     if not csv_files:
-        print(f"⚠️  No CSV files found in {results_path}")
+        print(f"  No CSV files found in {results_path}")
         return None
     
     # Load the most recent file
@@ -638,7 +638,7 @@ def load_experimental_data(results_dir: str = '../data/results') -> Optional[pd.
     
     try:
         df = pd.read_csv(latest_file)
-        print(f"✅ Loaded experimental data: {latest_file.name}")
+        print(f"✓ Loaded experimental data: {latest_file.name}")
         print(f"   Shape: {df.shape}")
         
         # Show column info
@@ -652,5 +652,5 @@ def load_experimental_data(results_dir: str = '../data/results') -> Optional[pd.
         return df
         
     except Exception as e:
-        print(f"❌ Error loading {latest_file}: {e}")
+        print(f"✗ Error loading {latest_file}: {e}")
         return None 

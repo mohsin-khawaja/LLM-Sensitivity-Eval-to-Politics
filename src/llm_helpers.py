@@ -50,7 +50,7 @@ class LLMProber:
         else:
             self.device = device
             
-        print(f"🔧 Loading {model_name} on {self.device} (TF: {use_tensorflow})")
+        print(f"Loading {model_name} on {self.device} (TF: {use_tensorflow})")
         
         # Load tokenizer and model
         self.tokenizer, self.model = self.load_model()
@@ -73,9 +73,9 @@ class LLMProber:
                 try:
                     import tensorflow as tf
                     model = TFAutoModelForCausalLM.from_pretrained(self.model_name)
-                    print(f"✅ Loaded TensorFlow model: {self.model_name}")
+                    print(f"Loaded TensorFlow model: {self.model_name}")
                 except ImportError:
-                    print("⚠️ TensorFlow not available, falling back to PyTorch")
+                    print("TensorFlow not available, falling back to PyTorch")
                     model = AutoModelForCausalLM.from_pretrained(self.model_name)
                     if self.device != "cpu":
                         model = model.to(self.device)
@@ -85,11 +85,11 @@ class LLMProber:
                     model = model.to(self.device)
             
             model.eval()
-            print(f"✅ Model loaded successfully")
+            print(f"Model loaded successfully")
             return tokenizer, model
             
         except Exception as e:
-            print(f"❌ Error loading model: {e}")
+            print(f"Error loading model: {e}")
             raise
     
     def next_seq_prob(self, context: str, choices: List[str]) -> List[float]:
@@ -212,10 +212,10 @@ class LLMProber:
                 results.append(result)
                 
                 if (i + 1) % 10 == 0:
-                    print(f"✅ Processed {i + 1}/{len(contexts)} examples")
+                    print(f"Processed {i + 1}/{len(contexts)} examples")
                     
             except Exception as e:
-                print(f"❌ Error processing example {i}: {e}")
+                print(f"Error processing example {i}: {e}")
                 result = {
                     'id': i,
                     'context': context,
