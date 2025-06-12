@@ -4,10 +4,10 @@
 
 ---
 
-**Author**: [Your Name]  
-**Institution**: [Your Institution]  
-**Course**: [Course Name/Number]  
-**Date**: [Submission Date]  
+**Author**: Mohsin Khawaja  
+**Institution**: UC San Diego  
+**Course**: COGS 150: Large Language Models  
+**Date**: June 4, 2025  
 
 ---
 

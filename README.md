@@ -159,10 +159,10 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 ## 📞 Contact
 
 For questions about this research:
-- **Primary Investigator**: [Your Name] - [your.email@institution.edu]
-- **Institution**: [Your Institution]
-- **Course**: [Course Name/Number]
-- **Submission Date**: [Date]
+- **Primary Investigator**: Mohsin Khawaja - mkhawaja@ucsd.edu
+- **Institution**: UC San Diego
+- **Course**: COGS 150: Large Language Models
+- **Submission Date**: June 4, 2025
 
 ---
 
