@@ -1,6 +1,6 @@
 # LLM Sensitivity Evaluation to Politics: Automatic Prompt Engineering
 
-## 🎯 Project Overview
+## Project Overview
 
 This project implements and evaluates **Automatic Prompt Engineering (APE)** for reducing political bias in Large Language Models. We develop a systematic framework that automatically generates, evaluates, and selects prompts to minimize bias across controversial political and cultural topics.
 
@@ -39,7 +39,7 @@ LLM-Sensitivity-Eval-to-Politics/
 └── LICENSE                            # Project license
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.8+
@@ -56,7 +56,7 @@ cd LLM-Sensitivity-Eval-to-Politics
 pip install -r requirements.txt
 
 # Verify installation
-python -c "import torch; print('✅ PyTorch installed:', torch.__version__)"
+python -c "import torch; print('PyTorch installed:', torch.__version__)"
 ```
 
 ### Running the APE Pipeline
@@ -68,7 +68,7 @@ jupyter notebook notebooks/04_auto_prompting.ipynb
 python src/run_ape_evaluation.py --stimuli data/stimuli/ --output results/
 ```
 
-## 📊 Key Results
+## Key Results
 
 | Metric | Baseline | APE-Optimized | Improvement |
 |--------|----------|---------------|-------------|
@@ -82,7 +82,7 @@ python src/run_ape_evaluation.py --stimuli data/stimuli/ --output results/
 2. **"Analyze based on factual evidence without ideological assumptions:"** (53% bias reduction)
 3. **"Evaluate impartially from all relevant viewpoints:"** (50% bias reduction)
 
-## 🔬 Methodology
+## Methodology
 
 ### APE Framework
 1. **Prompt Generation**: Meta-prompting + template-based candidate generation
@@ -101,7 +101,7 @@ python src/run_ape_evaluation.py --stimuli data/stimuli/ --output results/
 - Bootstrap confidence intervals: 95% CI confirms significance
 - Cross-validation: Results replicate across multiple runs
 
-## 📈 Impact and Applications
+## Impact and Applications
 
 ### Immediate Applications
 - **Content Moderation**: Neutral prompting for sensitive topics
@@ -113,7 +113,7 @@ python src/run_ape_evaluation.py --stimuli data/stimuli/ --output results/
 - Quantitative validation of prompt effectiveness for neutrality
 - Scalable framework for automated bias mitigation
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### Core Components
 - **`src/ape.py`**: Main APE framework with prompt generation and evaluation
@@ -127,18 +127,18 @@ python src/run_ape_evaluation.py --stimuli data/stimuli/ --output results/
 - **Scalability**: Processes 50+ prompts per hour
 - **Reproducibility**: Fixed seeds, deterministic evaluation
 
-## 📝 Documentation
+## Documentation
 
 - **[FINAL_REPORT.md](FINAL_REPORT.md)**: Complete academic report
 - **[APE_Executive_Summary.md](APE_Executive_Summary.md)**: Concise project overview
 - **[APE_Final_Report_Section.md](APE_Final_Report_Section.md)**: Detailed methodology
 - **[APE_Report_Appendices.md](APE_Report_Appendices.md)**: Technical appendices
 
-## ✅ Submission Checklist
+## Submission Checklist
 
 See [SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md) for complete verification steps.
 
-## 🤝 Contributing
+## Contributing
 
 This project was developed as part of academic research on AI bias mitigation. For questions or collaboration opportunities:
 
@@ -146,17 +146,17 @@ This project was developed as part of academic research on AI bias mitigation. F
 - Submit pull requests for improvements
 - Cite this work in academic publications
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Based on Automatic Prompt Engineering methodology (Zhou et al., 2022)
 - Political conflict datasets adapted from contemporary news sources
 - Cultural-ideological stimuli derived from moral psychology literature
 
-## 📞 Contact
+## Contact
 
 For questions about this research:
 - **Primary Investigator**: Mohsin Khawaja - mkhawaja@ucsd.edu
@@ -166,4 +166,4 @@ For questions about this research:
 
 ---
 
-**🎯 Bottom Line**: This project demonstrates that automated prompt engineering can significantly reduce political bias in AI systems, providing a scalable, scientifically rigorous approach to developing fairer language models. 
+** Bottom Line**: This project demonstrates that automated prompt engineering can significantly reduce political bias in AI systems, providing a scalable, scientifically rigorous approach to developing fairer language models. 
