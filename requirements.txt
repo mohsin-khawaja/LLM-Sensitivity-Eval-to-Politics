@@ -44,6 +44,12 @@ memory-profiler>=0.60.0
 # For deterministic random number generation
 random2>=1.0.0
 
+# LangChain Integration
+langchain>=0.0.350
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.0
+chromadb>=0.4.0
+
 # Additional utilities
 click>=8.0.0
 colorama>=0.4.0 
